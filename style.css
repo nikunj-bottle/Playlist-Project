@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    line-height: 1.6;
+    background-color: #0ee0eba4;
+    color: #333;
+}
+header {
+    background-color: #397ee6;
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    background-color: rgba(57, 230, 95, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section {
+    padding: 50px 10%;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #ffefdc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.menu-item:hover {
+    transform: scale(1.05);
+}
+button {
+    background-color: #f4a261;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6c098a;
+}
+footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 20px 10%;
+    margin-top: 50px;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form button {
+    margin-top: 10px;
+}
+@media(max-width:768px){
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a {
+        margin: 10px 5px;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
