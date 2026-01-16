@@ -1,9 +1,9 @@
 console.log("js console");
-let data;
+var data;
 let grid = document.querySelector(".grid-container");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200) 
+    if (this.readyState == 4 && this.status == 200) {
         data = JSON.parse(xhttp.responseText);
     console.log(data);
     data.forEach(function(game){
@@ -11,9 +11,9 @@ xhttp.onreadystatechange = function(){
     card.classList.add("card");
 
     let textData =
-    "<div class='game-title'>" + game.title + "</div>" + "<span>" +
-    "Publisher:" + game.publisher + "<br>" +
-    "Release Date:" + game.releaseDate + "<br>" +
+    "<div class='game-title'>" + game.Game + "</div>" + "<span>" +
+    "Publisher:" + game.Publisher + "<br>" +
+    "Release Date:" + game.Platform + "<br>" +
     "Needs Research:" +
     "</span>";
     
@@ -26,6 +26,7 @@ xhttp.onreadystatechange = function(){
     grid.appendChild(card);
 
 });
+}
 }
 xhttp.open("GET", "games.json", true);
 xhttp.send();
