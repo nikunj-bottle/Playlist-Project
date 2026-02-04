@@ -30,3 +30,29 @@ xhttp.onreadystatechange = function(){
 }
 xhttp.open("GET", "games.json", true);
 xhttp.send();
+
+var form = document.querySelector("form");
+var titleInput = document.querySelector("#title-input");
+var pubInput = document.querySelector("#publisher-input");
+var dateInput = document.querySelector("#release-date-input");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  var newObj = {
+    title: titleInput.value,
+    publisher: pubInput.value,
+    releaseDate: dateInput.value
+  };
+
+  data.push(newObj);
+  localStorage.setItem("datalist", JSON.stringify(data));
+  console.log("Saved new item to localStorage");
+
+  
+  if (document.querySelector(".grid-container")) {
+    makeCards();
+  }
+
+  form.reset();
+});
